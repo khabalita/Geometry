@@ -48,7 +48,7 @@ public class Square implements ICalculable{
         return height;
     }
 
-    public void setHeight(Double Height) {
+    public void setHeight(Double height) {
         this.height = height;
     }
 
