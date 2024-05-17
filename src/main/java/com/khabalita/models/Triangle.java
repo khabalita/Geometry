@@ -13,12 +13,25 @@ public class Triangle implements ICalculable{
     
     }
     
+    public Triangle(Double base, Double height){
+        this.base = base;
+        this.height = height;
+    }
+    
+    
+    public Triangle(Double side1, Double side2, Double base){
+        this.side1 = side1;
+        this.side2 = side2;
+        this.base = base;
+    }
+    
     public Triangle(Double side1, Double side2, Double base, Double height){
         this.side1 = side1;
         this.side2 = side2;
         this.base = base;
         this.height = height;
     }
+    
 
     //Getter y Setter
     public Double getSide1() {

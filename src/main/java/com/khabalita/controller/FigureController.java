@@ -26,50 +26,40 @@ public class FigureController {
     
     //METODOS FOR  CIRCLE
     public Double calcAreaCircle(Double radius){
-        Circle circle = new Circle();
+        Circle circle = new Circle(radius);
         Double areaCircle = circle.caclArea();
         return areaCircle;
     }
     
     public Double calcPerimeterCircle(Double radius){
-        Circle circle = new Circle();
+        Circle circle = new Circle(radius);
         Double perimeterCircle = circle.calcPerimeter();
         return perimeterCircle;
     }
     
     //METODOS FOR TRIANGLE
-    public Double calcAreaTriangle(){
-        Triangle triangle = new Triangle();
+    public Double calcAreaTriangle(Double base, Double height){
+        Triangle triangle = new Triangle(base, height);
         Double areaTriangle = triangle.caclArea();
         return areaTriangle;
     }
     
-    public Double calcPerimeterTriangle(){
-        Triangle triangle = new Triangle();
+    public Double calcPerimeterTriangle(Double base, Double side1, Double side2){
+        Triangle triangle = new Triangle(base, side1, side2);
         Double perimeterTriangle = triangle.calcPerimeter();
         return perimeterTriangle;
     }
     
     //METODOS FOR POLIGON
-    public Double calcApotema(Double numberOfSide, Double lengthOfSide) throws Exception{
-        Poligon poligon = new Poligon();
-        Double apotemaPoligon = poligon.calcApotema();
-        return apotemaPoligon;
-    }
-    
-    public Double calcAreaRegularPoligon() throws Exception{
-        Poligon poligon = new Poligon();
+    public Double calcAreaRegularPoligon(Double numberOfSide, Double lengthOfSide) throws Exception{
+        Poligon poligon = new Poligon(numberOfSide, lengthOfSide);
         Double areaPoligon = poligon.caclArea();
         return areaPoligon;
     }
     
     public Double calcPerimeterRegularPoligon(Double numberOfSide, Double lengthOfSide) throws Exception{
-        try{
-            Poligon poligon = new Poligon();
+            Poligon poligon = new Poligon(numberOfSide, lengthOfSide);
             Double perimeterPoligon = poligon.calcPerimeter();
             return perimeterPoligon;
-        }catch(Exception e){
-            throw new Exception ("Error to get Perimeter of Regular Poligon");
-        }
     }
 }

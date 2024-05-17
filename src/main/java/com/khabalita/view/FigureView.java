@@ -49,6 +49,11 @@ public class FigureView extends javax.swing.JFrame {
         });
 
         btnTriangle.setText("Triangle");
+        btnTriangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTriangleActionPerformed(evt);
+            }
+        });
 
         btnPoligon.setText("Poligon");
         btnPoligon.addActionListener(new java.awt.event.ActionListener() {
@@ -128,6 +133,12 @@ public class FigureView extends javax.swing.JFrame {
         poligonView.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnPoligonActionPerformed
+
+    private void btnTriangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTriangleActionPerformed
+        TriangleView triangleView = new TriangleView();
+        triangleView.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnTriangleActionPerformed
 
     
 

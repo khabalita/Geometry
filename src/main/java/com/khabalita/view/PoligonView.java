@@ -33,7 +33,6 @@ public class PoligonView extends javax.swing.JFrame {
         txtNumberOfSide = new javax.swing.JTextField();
         btnCalcArea = new javax.swing.JButton();
         btnCalcPerimeter = new javax.swing.JButton();
-        btnGetApotema = new javax.swing.JButton();
         lblApotemaResult = new javax.swing.JLabel();
         lblAreaResult = new javax.swing.JLabel();
         lblPerimeterResult = new javax.swing.JLabel();
@@ -67,13 +66,6 @@ public class PoligonView extends javax.swing.JFrame {
             }
         });
 
-        btnGetApotema.setText("GetApotema");
-        btnGetApotema.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGetApotemaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -91,8 +83,7 @@ public class PoligonView extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(btnGetApotema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCalcArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCalcArea, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                             .addComponent(lblAreaResult, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,9 +111,7 @@ public class PoligonView extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(txtLengthOfSide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGetApotema)
-                    .addComponent(lblApotemaResult, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblApotemaResult, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCalcArea)
@@ -151,16 +140,16 @@ public class PoligonView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcPerimeterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcPerimeterActionPerformed
+     
+    try {
         Double numberOfSide = Double.valueOf(txtNumberOfSide.getText());
         Double lengthOfSide = Double.valueOf(txtLengthOfSide.getText());
         FigureController figureController = new FigureController();
-        
-        try {
-            double perimeterResult = figureController.calcPerimeterRegularPoligon(numberOfSide,lengthOfSide);
-            lblPerimeterResult.setText(String.valueOf(perimeterResult));
-        } catch (Exception ex) {
+        Double perimeterResult = figureController.calcPerimeterRegularPoligon(numberOfSide,lengthOfSide);
+        lblPerimeterResult.setText(String.valueOf(perimeterResult));
+    } catch (Exception ex) {
             lblPerimeterResult.setText("Error" + ex.getMessage());
-        }
+    }
         
         
     }//GEN-LAST:event_btnCalcPerimeterActionPerformed
@@ -171,20 +160,18 @@ public class PoligonView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnGetApotemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetApotemaActionPerformed
-        Double numberOfSide = Double.valueOf(txtNumberOfSide.getText());
-        Double lengthOfSide = Double.valueOf(txtLengthOfSide.getText());
-        FigureController figureController = new FigureController();
-        try {
-            double apotemaResult = figureController.calcApotema(numberOfSide, lengthOfSide);
-            lblApotemaResult.setText(String.valueOf(apotemaResult));
-        } catch (Exception ex){
-            lblApotemaResult.setText("Error" + ex.getMessage());
-        }
-    }//GEN-LAST:event_btnGetApotemaActionPerformed
-
     private void btnCalcAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcAreaActionPerformed
-        // TODO add your handling code here:
+        try{
+            Double numberOfSide = Double.valueOf(txtNumberOfSide.getText());
+            Double lengthOfSide = Double.valueOf(txtLengthOfSide.getText());
+            FigureController figureController = new FigureController();
+            Double areaResult = figureController.calcAreaRegularPoligon(numberOfSide, lengthOfSide);
+            lblAreaResult.setText(String.valueOf(areaResult));
+        } catch (Exception ex){
+            lblAreaResult.setText("Error" + ex.getMessage());
+        }
+        
+        
     }//GEN-LAST:event_btnCalcAreaActionPerformed
 
     
@@ -193,7 +180,6 @@ public class PoligonView extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCalcArea;
     private javax.swing.JButton btnCalcPerimeter;
-    private javax.swing.JButton btnGetApotema;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

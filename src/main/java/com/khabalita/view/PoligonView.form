@@ -56,8 +56,7 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnGetApotema" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnCalcArea" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnCalcArea" alignment="0" pref="103" max="32767" attributes="0"/>
                               <Component id="lblAreaResult" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
@@ -94,10 +93,7 @@
                       <Component id="txtLengthOfSide" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnGetApotema" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblApotemaResult" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="lblApotemaResult" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnCalcArea" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -155,14 +151,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcPerimeterActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnGetApotema">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="GetApotema"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetApotemaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblApotemaResult">

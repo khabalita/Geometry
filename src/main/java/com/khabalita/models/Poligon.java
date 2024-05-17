@@ -13,7 +13,10 @@ public class Poligon implements ICalculable{
     
     }
     
-    public Poligon(Double numberOfSide, Double lengthOfSide){
+    public Poligon(Double numberOfSide, Double lengthOfSide) throws Exception{
+        if(numberOfSide <= 2){
+            throw new Exception("The number of side must be greater than 2");
+        }
         this.numberOfSide = numberOfSide;
         this.lengthOfSide = lengthOfSide;
     }
@@ -35,17 +38,10 @@ public class Poligon implements ICalculable{
         this.lengthOfSide = lengthOfSide;
     }
     
-    public Double calcApotema() throws Exception{
-        if(numberOfSide <= 2){
-            throw new Exception("The number of side must be greater than 2");
-        }
-          return lengthOfSide / (2 * Math.tan(Math.PI / numberOfSide));
-    } 
-    
     @Override
     public Double caclArea() throws Exception {
-        Double apotema = calcApotema();
-        return ((getAreaFormula(numberOfSide) * apotema * lengthOfSide) / 2);
+        Double apotema = lengthOfSide / (2 * Math.tan(Math.PI) / numberOfSide);
+        return (getAreaFormula(numberOfSide) * apotema * lengthOfSide) / 2;
     }
 
     @Override
@@ -55,7 +51,7 @@ public class Poligon implements ICalculable{
     }
     
     private double getAreaFormula(Double numberOfSide){
-        return (Math.PI * numberOfSide / (4 * Math.tan(Math.PI / numberOfSide)));
+        return Math.PI * numberOfSide / (4 * Math.tan(Math.PI / numberOfSide));
     }
     
 }
